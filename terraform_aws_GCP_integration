@@ -1,0 +1,887 @@
+     - id                      = "projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-ssh" -> null
+      - name                    = "gcp-network-gcp-allow-ssh" -> null
+      - network                 = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - priority                = 1000 -> null
+      - project                 = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - self_link               = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-ssh" -> null
+      - source_ranges           = [
+          - "0.0.0.0/0",
+        ] -> null
+      - source_service_accounts = [] -> null
+      - source_tags             = [] -> null
+      - target_service_accounts = [] -> null
+      - target_tags             = [] -> null
+
+      - allow {
+          - ports    = [
+              - "22",
+            ] -> null
+          - protocol = "tcp" -> null
+        }
+    }
+
+  # google_compute_firewall.gcp-allow-vpn will be destroyed
+  - resource "google_compute_firewall" "gcp-allow-vpn" {
+      - creation_timestamp      = "2022-06-12T05:47:05.845-07:00" -> null
+      - destination_ranges      = [] -> null
+      - direction               = "INGRESS" -> null
+      - disabled                = false -> null
+      - id                      = "projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-vpn" -> null
+      - name                    = "gcp-network-gcp-allow-vpn" -> null
+      - network                 = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - priority                = 1000 -> null
+      - project                 = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - self_link               = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-vpn" -> null
+      - source_ranges           = [
+          - "172.16.0.0/24",
+        ] -> null
+      - source_service_accounts = [] -> null
+      - source_tags             = [] -> null
+      - target_service_accounts = [] -> null
+      - target_tags             = [] -> null
+
+      - allow {
+          - ports    = [
+              - "0-65535",
+            ] -> null
+          - protocol = "tcp" -> null
+        }
+      - allow {
+          - ports    = [
+              - "0-65535",
+            ] -> null
+          - protocol = "udp" -> null
+        }
+    }
+
+  # google_compute_firewall.https will be destroyed
+  - resource "google_compute_firewall" "https" {
+      - creation_timestamp      = "2022-06-12T05:47:05.547-07:00" -> null
+      - destination_ranges      = [] -> null
+      - direction               = "INGRESS" -> null
+      - disabled                = false -> null
+      - id                      = "projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-https" -> null
+      - name                    = "gcp-network-https" -> null
+      - network                 = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - priority                = 1000 -> null
+      - project                 = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - self_link               = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-https" -> null
+      - source_ranges           = [
+          - "0.0.0.0/0",
+        ] -> null
+      - source_service_accounts = [] -> null
+      - source_tags             = [] -> null
+      - target_service_accounts = [] -> null
+      - target_tags             = [] -> null
+
+      - allow {
+          - ports    = [
+              - "443",
+            ] -> null
+          - protocol = "tcp" -> null
+        }
+    }
+
+  # google_compute_ha_vpn_gateway.gcp-vpn-gw will be destroyed
+  - resource "google_compute_ha_vpn_gateway" "gcp-vpn-gw" {
+      - id        = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+      - name      = "gcp-vpn-gw-us-central1" -> null
+      - network   = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - project   = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region    = "us-central1" -> null
+      - self_link = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+
+      - vpn_interfaces {
+          - id         = 0 -> null
+          - ip_address = "34.157.97.160" -> null
+        }
+      - vpn_interfaces {
+          - id         = 1 -> null
+          - ip_address = "35.220.93.210" -> null
+        }
+    }
+
+  # google_compute_instance.gcp-vm will be destroyed
+  - resource "google_compute_instance" "gcp-vm" {
+      - can_ip_forward          = false -> null
+      - cpu_platform            = "Intel Haswell" -> null
+      - current_status          = "RUNNING" -> null
+      - deletion_protection     = false -> null
+      - enable_display          = false -> null
+      - guest_accelerator       = [] -> null
+      - id                      = "projects/qwiklabs-gcp-01-04ef11e3451b/zones/us-central1-a/instances/gcp-vm-us-central1" -> null
+      - instance_id             = "3572630542443109970" -> null
+      - label_fingerprint       = "42WmSpB8rSM=" -> null
+      - labels                  = {} -> null
+      - machine_type            = "n1-standard-1" -> null
+      - metadata                = {} -> null
+      - metadata_fingerprint    = "-us_lPKYo00=" -> null
+      - metadata_startup_script = <<-EOT
+            #!/bin/bash -xe
+
+            # Copyright 2017 Google Inc.
+            #
+            # Licensed under the Apache License, Version 2.0 (the "License");
+            # you may not use this file except in compliance with the License.
+            # You may obtain a copy of the License at
+            #
+            #   http://www.apache.org/licenses/LICENSE-2.0
+            #
+            # Unless required by applicable law or agreed to in writing, software
+            # distributed under the License is distributed on an "AS IS" BASIS,
+            # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            # See the License for the specific language governing permissions and
+            # limitations under the License.
+
+
+            # Make it easy to run iperf3.
+            echo "iperf3 -c 44.197.25.134 -p 80 -i 1 -t 30 -P 8 -V" > /tmp/run_iperf_to_ext.sh
+            chmod 755 /tmp/run_iperf_to_ext.sh
+            echo "iperf3 -c 172.16.0.100 -p 80 -i 1 -t 30 -P 8 -V" > /tmp/run_iperf_to_int.sh
+            chmod 755 /tmp/run_iperf_to_int.sh
+
+            # Setup iperf3.
+            apt-get update
+            apt-get install -y iperf3
+
+            cat > /etc/systemd/system/iperf3.service <<EOF
+            [Unit]
+            Description=iPerf 3 Server
+            [Service]
+            Restart=always
+            TimeoutStartSec=0
+            RestartSec=3
+            WorkingDirectory=/tmp
+            ExecStart=/usr/bin/iperf3 -s -p 80
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+
+            systemctl daemon-reload
+            systemctl enable iperf3
+            systemctl start iperf3
+        EOT -> null
+      - name                    = "gcp-vm-us-central1" -> null
+      - project                 = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - resource_policies       = [] -> null
+      - self_link               = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/zones/us-central1-a/instances/gcp-vm-us-central1" -> null
+      - tags                    = [] -> null
+      - tags_fingerprint        = "42WmSpB8rSM=" -> null
+      - zone                    = "us-central1-a" -> null
+
+      - boot_disk {
+          - auto_delete = true -> null
+          - device_name = "persistent-disk-0" -> null
+          - mode        = "READ_WRITE" -> null
+          - source      = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/zones/us-central1-a/disks/gcp-vm-us-central1" -> null
+
+          - initialize_params {
+              - image  = "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20220530" -> null
+              - labels = {} -> null
+              - size   = 10 -> null
+              - type   = "pd-standard" -> null
+            }
+        }
+
+      - network_interface {
+          - name               = "nic0" -> null
+          - network            = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+          - network_ip         = "10.240.0.100" -> null
+          - queue_count        = 0 -> null
+          - stack_type         = "IPV4_ONLY" -> null
+          - subnetwork         = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/subnetworks/gcp-subnet1" -> null
+          - subnetwork_project = "qwiklabs-gcp-01-04ef11e3451b" -> null
+
+          - access_config {
+              - nat_ip       = "35.239.8.174" -> null
+              - network_tier = "PREMIUM" -> null
+            }
+        }
+
+      - scheduling {
+          - automatic_restart   = true -> null
+          - min_node_cpus       = 0 -> null
+          - on_host_maintenance = "MIGRATE" -> null
+          - preemptible         = false -> null
+        }
+
+      - shielded_instance_config {
+          - enable_integrity_monitoring = true -> null
+          - enable_secure_boot          = false -> null
+          - enable_vtpm                 = true -> null
+        }
+    }
+
+  # google_compute_network.gcp-network will be destroyed
+  - resource "google_compute_network" "gcp-network" {
+      - auto_create_subnetworks         = false -> null
+      - delete_default_routes_on_create = false -> null
+      - id                              = "projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - mtu                             = 0 -> null
+      - name                            = "gcp-network" -> null
+      - project                         = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - routing_mode                    = "REGIONAL" -> null
+      - self_link                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+    }
+
+  # google_compute_router.gcp-router1 will be destroyed
+  - resource "google_compute_router" "gcp-router1" {
+      - creation_timestamp            = "2022-06-12T05:47:29.319-07:00" -> null
+      - encrypted_interconnect_router = false -> null
+      - id                            = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1" -> null
+      - name                          = "gcp-router1" -> null
+      - network                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - project                       = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                        = "us-central1" -> null
+      - self_link                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1" -> null
+
+      - bgp {
+          - advertise_mode     = "CUSTOM" -> null
+          - advertised_groups  = [
+              - "ALL_SUBNETS",
+            ] -> null
+          - asn                = 65000 -> null
+          - keepalive_interval = 20 -> null
+        }
+    }
+
+  # google_compute_router.gcp-router2 will be destroyed
+  - resource "google_compute_router" "gcp-router2" {
+      - creation_timestamp            = "2022-06-12T05:47:29.531-07:00" -> null
+      - encrypted_interconnect_router = false -> null
+      - id                            = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2" -> null
+      - name                          = "gcp-router2" -> null
+      - network                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - project                       = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                        = "us-central1" -> null
+      - self_link                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2" -> null
+
+      - bgp {
+          - advertise_mode     = "CUSTOM" -> null
+          - advertised_groups  = [
+              - "ALL_SUBNETS",
+            ] -> null
+          - asn                = 65000 -> null
+          - keepalive_interval = 20 -> null
+        }
+    }
+
+  # google_compute_router.gcp-router3 will be destroyed
+  - resource "google_compute_router" "gcp-router3" {
+      - creation_timestamp            = "2022-06-12T05:47:29.115-07:00" -> null
+      - encrypted_interconnect_router = false -> null
+      - id                            = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3" -> null
+      - name                          = "gcp-router3" -> null
+      - network                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - project                       = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                        = "us-central1" -> null
+      - self_link                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3" -> null
+
+      - bgp {
+          - advertise_mode     = "CUSTOM" -> null
+          - advertised_groups  = [
+              - "ALL_SUBNETS",
+            ] -> null
+          - asn                = 65000 -> null
+          - keepalive_interval = 20 -> null
+        }
+    }
+
+  # google_compute_router.gcp-router4 will be destroyed
+  - resource "google_compute_router" "gcp-router4" {
+      - creation_timestamp            = "2022-06-12T05:47:28.985-07:00" -> null
+      - encrypted_interconnect_router = false -> null
+      - id                            = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4" -> null
+      - name                          = "gcp-router4" -> null
+      - network                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - project                       = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                        = "us-central1" -> null
+      - self_link                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4" -> null
+
+      - bgp {
+          - advertise_mode     = "CUSTOM" -> null
+          - advertised_groups  = [
+              - "ALL_SUBNETS",
+            ] -> null
+          - asn                = 65000 -> null
+          - keepalive_interval = 20 -> null
+        }
+    }
+
+  # google_compute_router_interface.router_interface1 will be destroyed
+  - resource "google_compute_router_interface" "router_interface1" {
+      - id         = "us-central1/gcp-router1/gcp-to-aws-interface1" -> null
+      - ip_range   = "169.254.79.254/30" -> null
+      - name       = "gcp-to-aws-interface1" -> null
+      - project    = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region     = "us-central1" -> null
+      - router     = "gcp-router1" -> null
+      - vpn_tunnel = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1" -> null
+    }
+
+  # google_compute_router_interface.router_interface2 will be destroyed
+  - resource "google_compute_router_interface" "router_interface2" {
+      - id         = "us-central1/gcp-router2/gcp-to-aws-interface2" -> null
+      - ip_range   = "169.254.189.122/30" -> null
+      - name       = "gcp-to-aws-interface2" -> null
+      - project    = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region     = "us-central1" -> null
+      - router     = "gcp-router2" -> null
+      - vpn_tunnel = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2" -> null
+    }
+
+  # google_compute_router_interface.router_interface3 will be destroyed
+  - resource "google_compute_router_interface" "router_interface3" {
+      - id         = "us-central1/gcp-router3/gcp-to-aws-interface3" -> null
+      - ip_range   = "169.254.204.162/30" -> null
+      - name       = "gcp-to-aws-interface3" -> null
+      - project    = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region     = "us-central1" -> null
+      - router     = "gcp-router3" -> null
+      - vpn_tunnel = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel3" -> null
+    }
+
+  # google_compute_router_interface.router_interface4 will be destroyed
+  - resource "google_compute_router_interface" "router_interface4" {
+      - id         = "us-central1/gcp-router4/gcp-to-aws-interface4" -> null
+      - ip_range   = "169.254.156.190/30" -> null
+      - name       = "gcp-to-aws-interface4" -> null
+      - project    = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region     = "us-central1" -> null
+      - router     = "gcp-router4" -> null
+      - vpn_tunnel = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel4" -> null
+    }
+
+  # google_compute_router_peer.gcp-router1-peer will be destroyed
+  - resource "google_compute_router_peer" "gcp-router1-peer" {
+      - advertise_mode            = "DEFAULT" -> null
+      - advertised_groups         = [] -> null
+      - advertised_route_priority = 0 -> null
+      - enable                    = true -> null
+      - id                        = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1/gcp-to-aws-bgp1" -> null
+      - interface                 = "gcp-to-aws-interface1" -> null
+      - ip_address                = "169.254.79.254" -> null
+      - name                      = "gcp-to-aws-bgp1" -> null
+      - peer_asn                  = 64512 -> null
+      - peer_ip_address           = "169.254.79.253" -> null
+      - project                   = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                    = "us-central1" -> null
+      - router                    = "gcp-router1" -> null
+
+      - bfd {
+          - min_receive_interval        = 1000 -> null
+          - min_transmit_interval       = 1000 -> null
+          - multiplier                  = 5 -> null
+          - session_initialization_mode = "DISABLED" -> null
+        }
+    }
+
+  # google_compute_router_peer.gcp-router2-peer will be destroyed
+  - resource "google_compute_router_peer" "gcp-router2-peer" {
+      - advertise_mode            = "DEFAULT" -> null
+      - advertised_groups         = [] -> null
+      - advertised_route_priority = 0 -> null
+      - enable                    = true -> null
+      - id                        = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2/gcp-to-aws-bgp2" -> null
+      - interface                 = "gcp-to-aws-interface2" -> null
+      - ip_address                = "169.254.189.122" -> null
+      - name                      = "gcp-to-aws-bgp2" -> null
+      - peer_asn                  = 64512 -> null
+      - peer_ip_address           = "169.254.189.121" -> null
+      - project                   = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                    = "us-central1" -> null
+      - router                    = "gcp-router2" -> null
+
+      - bfd {
+          - min_receive_interval        = 1000 -> null
+          - min_transmit_interval       = 1000 -> null
+          - multiplier                  = 5 -> null
+          - session_initialization_mode = "DISABLED" -> null
+        }
+    }
+
+  # google_compute_router_peer.gcp-router3-peer will be destroyed
+  - resource "google_compute_router_peer" "gcp-router3-peer" {
+      - advertise_mode            = "DEFAULT" -> null
+      - advertised_groups         = [] -> null
+      - advertised_route_priority = 0 -> null
+      - enable                    = true -> null
+      - id                        = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3/gcp-to-aws-bgp3" -> null
+      - interface                 = "gcp-to-aws-interface3" -> null
+      - ip_address                = "169.254.204.162" -> null
+      - name                      = "gcp-to-aws-bgp3" -> null
+      - peer_asn                  = 64512 -> null
+      - peer_ip_address           = "169.254.204.161" -> null
+      - project                   = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                    = "us-central1" -> null
+      - router                    = "gcp-router3" -> null
+
+      - bfd {
+          - min_receive_interval        = 1000 -> null
+          - min_transmit_interval       = 1000 -> null
+          - multiplier                  = 5 -> null
+          - session_initialization_mode = "DISABLED" -> null
+        }
+    }
+
+  # google_compute_router_peer.gcp-router4-peer will be destroyed
+  - resource "google_compute_router_peer" "gcp-router4-peer" {
+      - advertise_mode            = "DEFAULT" -> null
+      - advertised_groups         = [] -> null
+      - advertised_route_priority = 0 -> null
+      - enable                    = true -> null
+      - id                        = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4/gcp-to-aws-bgp4" -> null
+      - interface                 = "gcp-to-aws-interface4" -> null
+      - ip_address                = "169.254.156.190" -> null
+      - name                      = "gcp-to-aws-bgp4" -> null
+      - peer_asn                  = 64512 -> null
+      - peer_ip_address           = "169.254.156.189" -> null
+      - project                   = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                    = "us-central1" -> null
+      - router                    = "gcp-router4" -> null
+
+      - bfd {
+          - min_receive_interval        = 1000 -> null
+          - min_transmit_interval       = 1000 -> null
+          - multiplier                  = 5 -> null
+          - session_initialization_mode = "DISABLED" -> null
+        }
+    }
+
+  # google_compute_subnetwork.gcp-subnet1 will be destroyed
+  - resource "google_compute_subnetwork" "gcp-subnet1" {
+      - creation_timestamp         = "2022-06-12T05:47:05.883-07:00" -> null
+      - gateway_address            = "10.240.0.1" -> null
+      - id                         = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/subnetworks/gcp-subnet1" -> null
+      - ip_cidr_range              = "10.240.0.0/24" -> null
+      - name                       = "gcp-subnet1" -> null
+      - network                    = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network" -> null
+      - private_ip_google_access   = false -> null
+      - private_ipv6_google_access = "DISABLE_GOOGLE_ACCESS" -> null
+      - project                    = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - purpose                    = "PRIVATE" -> null
+      - region                     = "us-central1" -> null
+      - secondary_ip_range         = [] -> null
+      - self_link                  = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/subnetworks/gcp-subnet1" -> null
+      - stack_type                 = "IPV4_ONLY" -> null
+    }
+
+  # google_compute_vpn_tunnel.gcp-tunnel1 will be destroyed
+  - resource "google_compute_vpn_tunnel" "gcp-tunnel1" {
+      - creation_timestamp              = "2022-06-12T05:51:16.455-07:00" -> null
+      - description                     = "" -> null
+      - detailed_status                 = "Tunnel is up and running." -> null
+      - id                              = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1" -> null
+      - ike_version                     = 2 -> null
+      - local_traffic_selector          = [
+          - "0.0.0.0/0",
+        ] -> null
+      - name                            = "gcp-tunnel1" -> null
+      - peer_external_gateway           = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway" -> null
+      - peer_external_gateway_interface = 0 -> null
+      - peer_gcp_gateway                = "" -> null
+      - peer_ip                         = "34.192.94.80" -> null
+      - project                         = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                          = "us-central1" -> null
+      - remote_traffic_selector         = [
+          - "0.0.0.0/0",
+        ] -> null
+      - router                          = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1" -> null
+      - self_link                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1" -> null
+      - shared_secret                   = (sensitive value)
+      - shared_secret_hash              = "ABm2vfVUamuA4ymn8fN0t1Eflr2h" -> null
+      - target_vpn_gateway              = "" -> null
+      - tunnel_id                       = "4376139698557968299" -> null
+      - vpn_gateway                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+      - vpn_gateway_interface           = 0 -> null
+    }
+
+  # google_compute_vpn_tunnel.gcp-tunnel2 will be destroyed
+  - resource "google_compute_vpn_tunnel" "gcp-tunnel2" {
+      - creation_timestamp              = "2022-06-12T05:51:16.326-07:00" -> null
+      - description                     = "" -> null
+      - detailed_status                 = "Tunnel is up and running." -> null
+      - id                              = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2" -> null
+      - ike_version                     = 2 -> null
+      - local_traffic_selector          = [
+          - "0.0.0.0/0",
+        ] -> null
+      - name                            = "gcp-tunnel2" -> null
+      - peer_external_gateway           = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway" -> null
+      - peer_external_gateway_interface = 1 -> null
+      - peer_gcp_gateway                = "" -> null
+      - peer_ip                         = "54.84.162.238" -> null
+      - project                         = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                          = "us-central1" -> null
+      - remote_traffic_selector         = [
+          - "0.0.0.0/0",
+        ] -> null
+      - router                          = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2" -> null
+      - self_link                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2" -> null
+      - shared_secret                   = (sensitive value)
+      - shared_secret_hash              = "AFp9vm9jxFrvSdxOhhL4UBhVYWAx" -> null
+      - target_vpn_gateway              = "" -> null
+      - tunnel_id                       = "5804240174431362987" -> null
+      - vpn_gateway                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+      - vpn_gateway_interface           = 0 -> null
+    }
+
+  # google_compute_vpn_tunnel.gcp-tunnel3 will be destroyed
+  - resource "google_compute_vpn_tunnel" "gcp-tunnel3" {
+      - creation_timestamp              = "2022-06-12T05:51:16.572-07:00" -> null
+      - description                     = "" -> null
+      - detailed_status                 = "Tunnel is up and running." -> null
+      - id                              = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel3" -> null
+      - ike_version                     = 2 -> null
+      - local_traffic_selector          = [
+          - "0.0.0.0/0",
+        ] -> null
+      - name                            = "gcp-tunnel3" -> null
+      - peer_external_gateway           = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway" -> null
+      - peer_external_gateway_interface = 2 -> null
+      - peer_gcp_gateway                = "" -> null
+      - peer_ip                         = "50.16.91.184" -> null
+      - project                         = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                          = "us-central1" -> null
+      - remote_traffic_selector         = [
+          - "0.0.0.0/0",
+        ] -> null
+      - router                          = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3" -> null
+      - self_link                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel3" -> null
+      - shared_secret                   = (sensitive value)
+      - shared_secret_hash              = "APLmD9S_RhJl88ABGS6v5fyU1gp-" -> null
+      - target_vpn_gateway              = "" -> null
+      - tunnel_id                       = "6019785981514244011" -> null
+      - vpn_gateway                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+      - vpn_gateway_interface           = 1 -> null
+    }
+
+  # google_compute_vpn_tunnel.gcp-tunnel4 will be destroyed
+  - resource "google_compute_vpn_tunnel" "gcp-tunnel4" {
+      - creation_timestamp              = "2022-06-12T05:51:16.837-07:00" -> null
+      - description                     = "" -> null
+      - detailed_status                 = "Tunnel is up and running." -> null
+      - id                              = "projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel4" -> null
+      - ike_version                     = 2 -> null
+      - local_traffic_selector          = [
+          - "0.0.0.0/0",
+        ] -> null
+      - name                            = "gcp-tunnel4" -> null
+      - peer_external_gateway           = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway" -> null
+      - peer_external_gateway_interface = 3 -> null
+      - peer_gcp_gateway                = "" -> null
+      - peer_ip                         = "54.84.154.99" -> null
+      - project                         = "qwiklabs-gcp-01-04ef11e3451b" -> null
+      - region                          = "us-central1" -> null
+      - remote_traffic_selector         = [
+          - "0.0.0.0/0",
+        ] -> null
+      - router                          = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4" -> null
+      - self_link                       = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel4" -> null
+      - shared_secret                   = (sensitive value)
+      - shared_secret_hash              = "AKWQaVkH1gSY8R917F6cZXoh15GT" -> null
+      - target_vpn_gateway              = "" -> null
+      - tunnel_id                       = "6141040613451653035" -> null
+      - vpn_gateway                     = "https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1" -> null
+      - vpn_gateway_interface           = 1 -> null
+    }
+
+Plan: 0 to add, 0 to change, 44 to destroy.
+
+Changes to Outputs:
+  - aws_instance_external_ip = "44.197.25.134" -> null
+  - aws_instance_internal_ip = "172.16.0.100" -> null
+  - gcp_instance_external_ip = <<-EOT
+        35.239.8.174
+    EOT -> null
+  - gcp_instance_internal_ip = "10.240.0.100" -> null
+╷
+│ Warning: Version constraints inside provider configuration blocks are deprecated
+│
+│   on main.tf line 22, in provider "google":
+│   22:   version = "4.18.0"
+│
+│ Terraform 0.13 and earlier allowed provider version constraints inside the provider
+│ configuration block, but that is now deprecated and will be removed in a future version of
+│ Terraform. To silence this warning, move the provider version constraint into the
+│ required_providers block.
+│
+│ (and one more similar warning elsewhere)
+╵
+╷
+│ Warning: Argument is deprecated
+│
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 36, in provider "aws":
+│   36:   shared_credentials_file = pathexpand(var.aws_credentials_file_path)
+│
+│ Use shared_credentials_files instead.
+╵
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+google_compute_firewall.gcp-allow-internet: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-internet]
+google_compute_firewall.gcp-allow-ssh: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-ssh]
+google_compute_router_peer.gcp-router4-peer: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4/gcp-to-aws-bgp4]
+google_compute_router_peer.gcp-router3-peer: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3/gcp-to-aws-bgp3]
+google_compute_router_peer.gcp-router1-peer: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1/gcp-to-aws-bgp1]
+google_compute_instance.gcp-vm: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/zones/us-central1-a/instances/gcp-vm-us-central1]
+google_compute_firewall.gcp-allow-all: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-allow-all]
+google_compute_firewall.gcp-allow-icmp: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-icmp]
+google_compute_firewall.gcp-allow-vpn: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-vpn]
+google_compute_firewall.https: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-https]
+google_compute_firewall.gcp-allow-internet: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/g...rewalls/gcp-network-gcp-allow-internet, 10s elapsed]
+google_compute_firewall.gcp-allow-ssh: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-ssh, 10s elapsed]
+google_compute_router_peer.gcp-router4-peer: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...l1/routers/gcp-router4/gcp-to-aws-bgp4, 10s elapsed]
+google_compute_router_peer.gcp-router3-peer: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...l1/routers/gcp-router3/gcp-to-aws-bgp3, 10s elapsed]
+google_compute_router_peer.gcp-router1-peer: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...l1/routers/gcp-router1/gcp-to-aws-bgp1, 10s elapsed]
+google_compute_firewall.gcp-allow-all: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-allow-all, 10s elapsed]
+google_compute_firewall.gcp-allow-icmp: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/g...l/firewalls/gcp-network-gcp-allow-icmp, 10s elapsed]
+google_compute_firewall.gcp-allow-vpn: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-gcp-allow-vpn, 10s elapsed]
+google_compute_instance.gcp-vm: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/z...entral1-a/instances/gcp-vm-us-central1, 10s elapsed]
+google_compute_firewall.gcp-allow-ssh: Destruction complete after 12s
+google_compute_router_peer.gcp-router2-peer: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2/gcp-to-aws-bgp2]
+google_compute_firewall.gcp-allow-internet: Destruction complete after 12s
+aws_default_security_group.default: Destroying... [id=sg-0c2bd45d6fca29033]
+aws_default_security_group.default: Destruction complete after 0s
+google_compute_firewall.gcp-allow-all: Destruction complete after 12s
+aws_default_route_table.aws-vpc: Destroying... [id=rtb-0df70b61e3873ac16]
+aws_default_route_table.aws-vpc: Destruction complete after 0s
+google_compute_firewall.gcp-allow-vpn: Destruction complete after 12s
+aws_internet_gateway.aws-vpc-igw: Destroying... [id=igw-0b81d86f2308c9db4]
+google_compute_firewall.gcp-allow-icmp: Destruction complete after 12s
+google_compute_router_peer.gcp-router4-peer: Destruction complete after 13s
+google_compute_router_interface.router_interface4: Destroying... [id=us-central1/gcp-router4/gcp-to-aws-interface4]
+google_compute_firewall.https: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/firewalls/gcp-network-https, 10s elapsed]
+google_compute_router_peer.gcp-router3-peer: Destruction complete after 14s
+google_compute_router_interface.router_interface3: Destroying... [id=us-central1/gcp-router3/gcp-to-aws-interface3]
+google_compute_router_interface.router_interface4: Destruction complete after 1s
+google_compute_vpn_tunnel.gcp-tunnel4: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel4]
+google_compute_router_peer.gcp-router1-peer: Destruction complete after 14s
+google_compute_router_interface.router_interface1: Destroying... [id=us-central1/gcp-router1/gcp-to-aws-interface1]
+google_compute_firewall.https: Destruction complete after 12s
+google_compute_instance.gcp-vm: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/z...entral1-a/instances/gcp-vm-us-central1, 20s elapsed]
+google_compute_router_peer.gcp-router2-peer: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...l1/routers/gcp-router2/gcp-to-aws-bgp2, 10s elapsed]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 10s elapsed]
+google_compute_router_interface.router_interface3: Still destroying... [id=us-central1/gcp-router3/gcp-to-aws-interface3, 10s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel4: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel4, 10s elapsed]
+google_compute_router_peer.gcp-router2-peer: Destruction complete after 12s
+google_compute_router_interface.router_interface2: Destroying... [id=us-central1/gcp-router2/gcp-to-aws-interface2]
+google_compute_router_interface.router_interface1: Still destroying... [id=us-central1/gcp-router1/gcp-to-aws-interface1, 10s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel4: Destruction complete after 11s
+google_compute_router.gcp-router4: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4]
+google_compute_router_interface.router_interface3: Destruction complete after 11s
+google_compute_vpn_tunnel.gcp-tunnel3: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel3]
+google_compute_router_interface.router_interface1: Destruction complete after 12s
+google_compute_vpn_tunnel.gcp-tunnel1: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1]
+google_compute_instance.gcp-vm: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/z...entral1-a/instances/gcp-vm-us-central1, 30s elapsed]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 20s elapsed]
+google_compute_router_interface.router_interface2: Still destroying... [id=us-central1/gcp-router2/gcp-to-aws-interface2, 10s elapsed]
+google_compute_router.gcp-router4: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router4, 10s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel3: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel3, 10s elapsed]
+google_compute_router_interface.router_interface2: Destruction complete after 12s
+google_compute_vpn_tunnel.gcp-tunnel2: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2]
+google_compute_vpn_tunnel.gcp-tunnel1: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1, 10s elapsed]
+google_compute_router.gcp-router4: Destruction complete after 11s
+google_compute_vpn_tunnel.gcp-tunnel3: Destruction complete after 11s
+google_compute_router.gcp-router3: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3]
+google_compute_instance.gcp-vm: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/z...entral1-a/instances/gcp-vm-us-central1, 40s elapsed]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 30s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel2: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2, 10s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel1: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel1, 20s elapsed]
+google_compute_router.gcp-router3: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router3, 10s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel1: Destruction complete after 21s
+google_compute_router.gcp-router1: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1]
+google_compute_router.gcp-router3: Destruction complete after 11s
+google_compute_instance.gcp-vm: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/z...entral1-a/instances/gcp-vm-us-central1, 50s elapsed]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 40s elapsed]
+google_compute_instance.gcp-vm: Destruction complete after 53s
+aws_eip.aws-ip: Destroying... [id=eipalloc-0a3d050dba11c2373]
+google_compute_subnetwork.gcp-subnet1: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/subnetworks/gcp-subnet1]
+google_compute_vpn_tunnel.gcp-tunnel2: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnTunnels/gcp-tunnel2, 20s elapsed]
+google_compute_vpn_tunnel.gcp-tunnel2: Destruction complete after 21s
+google_compute_router.gcp-router2: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2]
+google_compute_external_vpn_gateway.external_gateway: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway]
+google_compute_router.gcp-router1: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router1, 10s elapsed]
+aws_eip.aws-ip: Destruction complete after 4s
+aws_instance.aws-vm: Destroying... [id=i-033b2386a386a6fd9]
+google_compute_router.gcp-router1: Destruction complete after 12s
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 50s elapsed]
+google_compute_subnetwork.gcp-subnet1: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...ns/us-central1/subnetworks/gcp-subnet1, 10s elapsed]
+google_compute_subnetwork.gcp-subnet1: Destruction complete after 12s
+google_compute_router.gcp-router2: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/routers/gcp-router2, 10s elapsed]
+google_compute_external_vpn_gateway.external_gateway: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/externalVpnGateways/aws-gateway, 10s elapsed]
+aws_instance.aws-vm: Still destroying... [id=i-033b2386a386a6fd9, 10s elapsed]
+google_compute_router.gcp-router2: Destruction complete after 11s
+google_compute_external_vpn_gateway.external_gateway: Destruction complete after 12s
+aws_vpn_connection.aws-vpn-connection1: Destroying... [id=vpn-000afe88ae74a09cc]
+aws_vpn_connection.aws-vpn-connection2: Destroying... [id=vpn-08a663bbb855772b1]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 1m0s elapsed]
+aws_instance.aws-vm: Still destroying... [id=i-033b2386a386a6fd9, 20s elapsed]
+aws_vpn_connection.aws-vpn-connection1: Still destroying... [id=vpn-000afe88ae74a09cc, 10s elapsed]
+aws_vpn_connection.aws-vpn-connection2: Still destroying... [id=vpn-08a663bbb855772b1, 10s elapsed]
+aws_internet_gateway.aws-vpc-igw: Still destroying... [id=igw-0b81d86f2308c9db4, 1m10s elapsed]
+aws_vpn_connection.aws-vpn-connection1: Destruction complete after 14s
+aws_customer_gateway.aws-cgw-1: Destroying... [id=cgw-02056e44b39c93116]
+aws_vpn_connection.aws-vpn-connection2: Destruction complete after 14s
+aws_customer_gateway.aws-cgw-2: Destroying... [id=cgw-0fca22e38b2971c44]
+aws_vpn_gateway.aws-vpn-gw: Destroying... [id=vgw-08b6cac2cc0c7235c]
+aws_customer_gateway.aws-cgw-1: Destruction complete after 1s
+aws_customer_gateway.aws-cgw-2: Destruction complete after 2s
+google_compute_ha_vpn_gateway.gcp-vpn-gw: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/vpnGateways/gcp-vpn-gw-us-central1]
+aws_vpn_gateway.aws-vpn-gw: Destruction complete after 4s
+aws_instance.aws-vm: Still destroying... [id=i-033b2386a386a6fd9, 31s elapsed]
+aws_internet_gateway.aws-vpc-igw: Destruction complete after 1m16s
+aws_instance.aws-vm: Destruction complete after 33s
+aws_security_group.aws-allow-ssh: Destroying... [id=sg-0ac15b099b3ee095d]
+google_compute_address.gcp-ip: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1/addresses/gcp-vm-ip-us-central1]
+aws_subnet.aws-subnet1: Destroying... [id=subnet-01ddd6bc1767b1a9f]
+aws_security_group.aws-allow-icmp: Destroying... [id=sg-08a19455070210842]
+aws_security_group.aws-allow-vpn: Destroying... [id=sg-0033680622f986969]
+aws_security_group.aws-allow-internet: Destroying... [id=sg-02c6196f025fa61ed]
+aws_security_group.aws-allow-vpn: Destruction complete after 1s
+aws_security_group.aws-allow-icmp: Destruction complete after 1s
+aws_security_group.aws-allow-ssh: Destruction complete after 1s
+aws_security_group.aws-allow-internet: Destruction complete after 1s
+google_compute_ha_vpn_gateway.gcp-vpn-gw: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...al1/vpnGateways/gcp-vpn-gw-us-central1, 10s elapsed]
+google_compute_ha_vpn_gateway.gcp-vpn-gw: Destruction complete after 11s
+google_compute_network.gcp-network: Destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network]
+google_compute_address.gcp-ip: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/r...ntral1/addresses/gcp-vm-ip-us-central1, 10s elapsed]
+google_compute_address.gcp-ip: Destruction complete after 11s
+google_compute_network.gcp-network: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network, 10s elapsed]
+google_compute_network.gcp-network: Still destroying... [id=projects/qwiklabs-gcp-01-04ef11e3451b/global/networks/gcp-network, 20s elapsed]
+google_compute_network.gcp-network: Destruction complete after 22s
+╷
+│ Warning: Argument is deprecated
+│
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 36, in provider "aws":
+│   36:   shared_credentials_file = pathexpand(var.aws_credentials_file_path)
+│
+│ Use shared_credentials_files instead.
+╵
+╷
+│ Error: error deleting EC2 Subnet (subnet-01ddd6bc1767b1a9f): UnauthorizedOperation: You are not authorized to perform this operation. Encoded authorization failure message: zqgmM2ZYlv9HHjiBuqVAIqky9fvM7WXYnUPIRvtm58NOVel8EF1ZsQ_dpvqPMyOvwV0IiILJ0subJMCFSnqUXVMxb1J23pwB9BY38qPKk4NyF0p4OcHDueDrhqKrDJ1DlPaExbFPAxvfE3Lpi7PnQMJ2YdnTEAbMlN5p26ymqXZeMbsxy8YpxVsnoPP4GAus7m-Zl0WZZgmF0xbUt8RPHJTbqI5r8DxMVCxmlwwdWpa6co0UZrxJ7wxZKMyIa85WHtvw8QbH6gA2fKRLEHPNZNdXRI5o8eSkx2h3WE7w7qJ-MU7KXuzud_M5XhO3vSeU6x-8v3FT-SgQS5qp2hcaJXWuTJnUHk-CMwaj_vS5fV24ygrTHl3AQ2-uaZahrYN7Wyu--gVk7lXmtPiSwfMdoj3vGvwR89oEXtSRWOCXwn0s1iT9yncc3XotXmQADB4NBo4goSGG0Aa5zyccy5DewI6LimvuRlxAsab6Y3_ZNzlaulg32QmE24MyWfAsiMwoOH7zID65e7HEh_iGP4IicQF3LUe4AQ1oDGObNi5afFpM6NA3BkYnklX7eMdUJlQJoP9MWzzGYuf7BkX1p6cM45YLoT1H_KLBqCB88YZuHpnMPjx-Q8S5CbUQ5nXZkhyrdyjl-Xi1TF66UNp_eqQYTo_FEPorOkdzj8SnnrJmzQszWmq2KjiI8khgHM3Rbp7HaGheEPtE8pH5UNxdrrPEUBLojuatSXOG2w
+│       status code: 403, request id: 0af0b2d0-676f-4798-94fe-86120db8d9c4
+│
+│
+╵
+student_03_cd9f54112b7c@cloudshell:~/autonetdeploy-multicloudvpn/terraform (qwiklabs-gcp-01-04ef11e3451b)$ terraform destroy
+data.google_compute_zones.available: Reading...
+data.google_compute_zones.available: Read complete after 0s [id=projects/qwiklabs-gcp-01-04ef11e3451b/regions/us-central1]
+aws_vpc.aws-vpc: Refreshing state... [id=vpc-0b6b91e4ad8010803]
+data.aws_ami.ubuntu: Reading...
+data.aws_ami.ubuntu: Read complete after 0s [id=ami-0b0ea68c435eb488d]
+aws_subnet.aws-subnet1: Refreshing state... [id=subnet-01ddd6bc1767b1a9f]
+
+Terraform used the selected providers to generate the following execution plan. Resource
+actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_subnet.aws-subnet1 will be destroyed
+  - resource "aws_subnet" "aws-subnet1" {
+      - arn                                            = "arn:aws:ec2:us-east-1:725918503272:subnet/subnet-01ddd6bc1767b1a9f" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-1f" -> null
+      - availability_zone_id                           = "use1-az5" -> null
+      - cidr_block                                     = "172.16.0.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-01ddd6bc1767b1a9f" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "725918503272" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Name" = "aws-vpn-subnet"
+        } -> null
+      - tags_all                                       = {
+          - "Name" = "aws-vpn-subnet"
+        } -> null
+      - vpc_id                                         = "vpc-0b6b91e4ad8010803" -> null
+    }
+
+  # aws_vpc.aws-vpc will be destroyed
+  - resource "aws_vpc" "aws-vpc" {
+      - arn                              = "arn:aws:ec2:us-east-1:725918503272:vpc/vpc-0b6b91e4ad8010803" -> null
+      - assign_generated_ipv6_cidr_block = false -> null
+      - cidr_block                       = "172.16.0.0/16" -> null
+      - default_network_acl_id           = "acl-0cf7433247e11e5ec" -> null
+      - default_route_table_id           = "rtb-0df70b61e3873ac16" -> null
+      - default_security_group_id        = "sg-0c2bd45d6fca29033" -> null
+      - dhcp_options_id                  = "dopt-63561419" -> null
+      - enable_classiclink               = false -> null
+      - enable_classiclink_dns_support   = false -> null
+      - enable_dns_hostnames             = true -> null
+      - enable_dns_support               = true -> null
+      - id                               = "vpc-0b6b91e4ad8010803" -> null
+      - instance_tenancy                 = "default" -> null
+      - ipv6_netmask_length              = 0 -> null
+      - main_route_table_id              = "rtb-0df70b61e3873ac16" -> null
+      - owner_id                         = "725918503272" -> null
+      - tags                             = {
+          - "Name" = "aws-vpc"
+        } -> null
+      - tags_all                         = {
+          - "Name" = "aws-vpc"
+        } -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Changes to Outputs:
+  - aws_instance_internal_ip = "172.16.0.100" -> null
+  - gcp_instance_internal_ip = "10.240.0.100" -> null
+╷
+│ Warning: Version constraints inside provider configuration blocks are deprecated
+│
+│   on main.tf line 22, in provider "google":
+│   22:   version = "4.18.0"
+│
+│ Terraform 0.13 and earlier allowed provider version constraints inside the provider
+│ configuration block, but that is now deprecated and will be removed in a future version of
+│ Terraform. To silence this warning, move the provider version constraint into the
+│ required_providers block.
+│
+│
+│ (and one more similar warning elsewhere)
+╵
+╷
+│ Warning: Argument is deprecated
+│
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 36, in provider "aws":
+│   36:   shared_credentials_file = pathexpand(var.aws_credentials_file_path)
+│
+│ Use shared_credentials_files instead.
+╵
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+aws_subnet.aws-subnet1: Destroying... [id=subnet-01ddd6bc1767b1a9f]
+╷
+│ Warning: Argument is deprecated
+│
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 36, in provider "aws":
+│   36:   shared_credentials_file = pathexpand(var.aws_credentials_file_path)
+│
+│ Use shared_credentials_files instead.
+╵
+╷│ Error: error deleting EC2 Subnet (subnet-01ddd6bc1767b1a9f): UnauthorizedOperation: You are not authorized to perform this operation. Encoded authorization failure message: OzPhzfYCNe0EiEbzineSkXOQAeBa0St5YNRZu6CVoxBOKF_y2YP9J3TsfXScYHT5ATqYmyyvZpiTiRI1Y6PEAzIlLGre-11h06KtrXfNRFazvCJhcYgUTFjs3Y62Cmw35H_QK8ElZxkiczw7up0dPmo_mfWPtT965Onapk5eCHhRpoSAuAiRYM4DDJn7hjBn57wPkpaNMynSZZYyNPr78uQNPv7NI1yj1GrXPzIQUHo5xLjbOHXXb-GN2YERHkibCP09-N_EtuAYYekA2s2tk0lcyjkPF9UsKE_Vf1P6flp4fzrq8gyHuO891sRwC23kGfwymE3H4LVRUrnO07iKe6Y1-J6EEADK44I04UN5kT76cvwaCXwyIf6V4CyskDGkMeSuLzqWXRVWruHSDnWSwsovC0hUOLEBoP0P2JGKeQBmPwjOnjAZ2P1vQDkYf082Ol75OYKlcr5igfE1y3WzwZlH9iqb2CBNWyZrfMl70NcaoHr9q9cfCBbZV6SxscAQI4CK-dyKYzDqsjgAYzn-hgbt-GgWH_AAGBipfL8ehSCX39KVg5xGu1IAaJfSYL8bEOjZ_YD_kkvBkRATAXwQ952wgEWcMQeTNq68KpTrIhhUeO7p601cptoOu6EcppIcbm2x5247qQCqChzIZ0Z9hoB2Snc0G7tAqpXB4KtldHorz91wpFG_J7_aqfog2al2aZcwpxUVwEhRbo9VEEUzF3HpyBDPsXNLJLk
+│       status code: 403, request id: bc881692-e31a-4f74-9b7e-addd57bf8359
+│
+│
+student_03_cd9f54112b7c@cloudshell:~/autonetdeploy-multicloudvpn/terraform (qwiklabs-gcp-01-04ef11e3451b)$
